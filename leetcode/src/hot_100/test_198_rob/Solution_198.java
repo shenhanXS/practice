@@ -12,8 +12,61 @@ package hot_100.test_198_rob;
  */
 public class Solution_198 {
 
-    public int rob(int[] nums) {
-
-        return 0;
+    public static void main(String[] args) {
+        Solution_198 solution_198 = new Solution_198();
+        int[] nums = {2,7,9,3,1};
+        System.out.println(solution_198.rob(nums));
     }
+
+    // 进一步简化 , 最终版
+    public int rob(int[] nums) {
+        if (nums.length == 1) return nums[0];
+        int first = nums[0], second = Math.max(nums[0], nums[1]);
+        for (int i = 2; i < nums.length; i++) {
+            int temp = Math.max(first + nums[i], second);
+            first = second;
+            second = temp;
+        }
+        return second;
+    }
+
+    /*
+    // 看了官方解法改进后的dp , 时间复杂度O(n) , 空间复杂度O(1)
+    // 使用滚动数组，可以只存储前两间房屋的最高总金额，而不需要存储整个数组的结果，因此空间复杂度是O(1)。
+    public int rob(int[] nums) {
+        int[] endWithNMaxCount = new int[3];
+        if (nums.length == 1) return nums[0];
+        if (nums.length == 2) return Math.max(nums[0], nums[1]);
+        if (nums.length == 3) return Math.max(nums[0] + nums[2], nums[1]);
+        endWithNMaxCount[0] = nums[0];
+        endWithNMaxCount[1] = nums[1];
+        endWithNMaxCount[2] = nums[0] + nums[2];
+        for (int i = 3; i < nums.length; i++) {
+            int temp = Math.max(endWithNMaxCount[0], endWithNMaxCount[1]) + nums[i];
+            endWithNMaxCount[0] = endWithNMaxCount[1];
+            endWithNMaxCount[1] = endWithNMaxCount[2];
+            endWithNMaxCount[2] = temp;
+        }
+        return Math.max(endWithNMaxCount[1], endWithNMaxCount[2]);
+    }
+     */
+
+    /*
+    // 自己写的dp , 时间复杂度O(n) , 空间复杂度O(n)
+    public int rob(int[] nums) {
+        // 记录以该位置为结尾的最高金额
+        int[] endWithNMaxCount = new int[nums.length];
+        if (nums.length == 1) return nums[0];
+        if (nums.length == 2) return Math.max(nums[0], nums[1]);
+        if (nums.length == 3) return Math.max(nums[0] + nums[2], nums[1]);
+        endWithNMaxCount[0] = nums[0];
+        endWithNMaxCount[1] = nums[1];
+        endWithNMaxCount[2] = nums[0] + nums[2];
+        for (int i = 3; i < nums.length; i++) {
+            endWithNMaxCount[i] = Math.max(endWithNMaxCount[i - 2], endWithNMaxCount[i - 3]) + nums[i];
+        }
+        // 返回最后一个结尾和次一位结尾的两个值中的最大值
+        return Math.max(endWithNMaxCount[nums.length - 1], endWithNMaxCount[nums.length - 2]);
+    }
+     */
 }
