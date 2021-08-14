@@ -1,5 +1,7 @@
 package hot_100.test_207;
 
+import java.util.*;
+
 /**
  * 你这个学期必须选修 numCourses 门课程，记为 0 到 numCourses - 1 。
  *
@@ -14,8 +16,48 @@ package hot_100.test_207;
  */
 public class Solution_207 {
 
-    public boolean canFinish(int numCourses, int[][] prerequisites) {
-
-        return true;
+    public static void main(String[] args) {
+        Solution_207 solution_207 = new Solution_207();
+        int[][] prerequisites = {{1,0},{2,6},{1,7},{6,4},{7,0},{0,5}};
+        int numCourses = 8;
+        System.out.println(solution_207.canFinish(numCourses, prerequisites));
     }
+
+
+    // 官方解法一 dfs
+    List<List<Integer>> edges = new ArrayList<>();
+    int[] visited;
+    boolean valid = true;
+
+    public boolean canFinish(int numCourses, int[][] prerequisites) {
+        visited = new int[numCourses];
+        for (int i = 0; i < numCourses; i++) {
+            edges.add(new ArrayList<Integer>());
+        }
+        for (int[] info : prerequisites) {
+            edges.get(info[0]).add(info[1]);
+        }
+        for (int i = 0; i < numCourses && valid; i++) {
+            if (visited[i] == 0) {
+                dfs(i);
+            }
+        }
+        return valid;
+    }
+    public void dfs(int u) {
+        visited[u] = 1;
+        for (int v : edges.get(u)) {
+            if (visited[v] == 0) {
+                dfs(v);
+                if (!valid) {
+                    return;
+                }
+            }else if (visited[v] == 1) {
+                valid = false;
+                return;
+            }
+        }
+        visited[u] = 2;
+    }
+
 }
