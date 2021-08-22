@@ -48,53 +48,37 @@ public class Solution {
                 ratio[i][1] = ratio[i - 1][1] + 1;
             }
         }
+        // 更新dp数组
         for (int i = 0; i < dp.length; i++) {
             if (ratio[i][0] == 0 || ratio[i][1] == 0) {
                 dp[i] = Math.max(ratio[i][0], ratio[i][1]);
             } else if (ratio[i][0] == 1 || ratio[i][1] == 1) {
                 dp[i] = 1;
             } else {
-                HashSet<Integer> set = get(Math.max(ratio[i][0], ratio[i][1]), Math.min(ratio[i][0], ratio[i][1]));
-                if (set.size() == 0){
-                    dp[i] = 1;
-                }else {
-                    for (Integer j : set) {
-                        int temp = dp[j - 1];
-                        int flag = j - 1;
-                        for (int k = 2 * j; k < i; k*=k) {
-                            if (dp[k - 1] > temp) {
-                                flag = k - 1;
-                                temp = dp[k - 1];
-                            }
-                        }
-                        if (ratio[flag][0] * ratio[i][1] == ratio[flag][1] * ratio[i][0]) {
-                            dp[i] = temp + 1;
-                        }else {
-                            dp[i] = 1;
-                        }
+                int c = ratio[i][0], d = ratio[i][1];
+                int minRatio = 1;
+                for (int j = 1; j <= c; j++) {
+                    if ((j * d / c) * c == j * d) {
+                        minRatio = j;
+                        break;
                     }
                 }
+                int temp = 0;
+                int len = minRatio + (minRatio * d) / c;
+                for (int j = 1; i - j * len > 0; j++) {
+                    int flag = i - j * len;
+                    int a = ratio[flag][0], b = ratio[flag][1];
+                    if (a * d == b * c) {
+                        temp = dp[flag];
+                        break;
+                    }
+                }
+                dp[i] = temp + 1;
+
             }
         }
         return dp;
     }
-    public static HashSet<Integer> get(int a, int b) {
-        while (b != 0) {
-            int temp = a % b;
-            a = b;
-            b = temp;
-        }
-        HashSet<Integer> set = new HashSet<>();
-        for (int i = 2; i <= a; ) {
-            if (a % i == 0) {
-                set.add(i);
-                a /= i;//记得每次进行除i
-            } else {
-                i++;//之所以在这儿进行++的原因是需要求最小的，只有在不能被除尽的时候加一
-            }
-        }
-        set.remove(1);
-        return set;
-    }
+
 
 }
