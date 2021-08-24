@@ -20,6 +20,8 @@
 
 ##### [160. 相交链表](https://leetcode-cn.com/problems/intersection-of-two-linked-lists)
 
+##### [215. 数组中的第K个最大元素](https://leetcode-cn.com/problems/kth-largest-element-in-an-array/) （快排的partition方法）
+
 ##### [633. 平方数之和](https://leetcode-cn.com/problems/sum-of-square-numbers)  （枚举）
 
 
