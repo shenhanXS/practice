@@ -1,6 +1,4 @@
-package xiaoHongShu.test2021.test1;
-
-import xiaoHongShu.test2021.test2.Main;
+package xiaoHongShu.test20210821.test1;
 
 import java.util.ArrayList;
 import java.util.List;

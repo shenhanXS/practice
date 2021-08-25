@@ -1,9 +1,5 @@
-package netEase.test2021.test3;
+package netEase.test20210821.test3;
 
-import org.junit.Test;
-
-import java.util.Arrays;
-import java.util.Date;
 import java.util.Scanner;
 
 /**

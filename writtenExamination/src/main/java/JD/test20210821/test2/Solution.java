@@ -1,10 +1,5 @@
-package JD.test2021.test2;
+package JD.test20210821.test2;
 
-import org.junit.Test;
-
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
 import java.util.Scanner;
 
 /**

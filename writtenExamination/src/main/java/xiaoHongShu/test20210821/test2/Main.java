@@ -1,4 +1,4 @@
-package xiaoHongShu.test2021.test2;
+package xiaoHongShu.test20210821.test2;
 
 import java.util.Scanner;
 
