@@ -1,4 +1,4 @@
-package hot_100.test_207;
+package hot_100.test_207_canFinish;
 
 import java.util.ArrayList;
 import java.util.HashSet;

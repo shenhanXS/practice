@@ -1,4 +1,4 @@
-package hot_100.test_206;
+package hot_100.test_206_reverseList;
 
 import hot_100.ListNode;
 

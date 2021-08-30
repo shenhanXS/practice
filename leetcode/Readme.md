@@ -74,6 +74,8 @@
 
 ##### [221. 最大正方形](https://leetcode-cn.com/problems/maximal-square/)
 
+##### [剑指 Offer 49. 丑数](https://leetcode-cn.com/problems/chou-shu-lcof) (三指针)
+
 
 
 ## 前缀和
@@ -93,6 +95,10 @@
 ##### [1011. 在 D 天内送达包裹的能力](https://leetcode-cn.com/problems/capacity-to-ship-packages-within-d-days)
 
 ##### [1482. 制作 m 束花所需的最少天数](https://leetcode-cn.com/problems/minimum-number-of-days-to-make-m-bouquets)
+
+##### [剑指 Offer 53 - II. 0～n-1中缺失的数字](https://leetcode-cn.com/problems/que-shi-de-shu-zi-lcof)
+
+
 
 
 
