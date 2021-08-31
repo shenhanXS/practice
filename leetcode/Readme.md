@@ -136,6 +136,10 @@
 
 ##### [206. 反转链表](https://leetcode-cn.com/problems/reverse-linked-list)
 
+##### [234. 回文链表](https://leetcode-cn.com/problems/palindrome-linked-list/)
+
+##### [236. 二叉树的最近公共祖先](https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/)
+
 ##### [872. 叶子相似的树](https://leetcode-cn.com/problems/leaf-similar-trees)
 
 ##### [1723. 完成所有工作的最短时间](https://leetcode-cn.com/problems/find-minimum-time-to-finish-all-jobs)
