@@ -2,6 +2,9 @@ package hot_100.test_236_lowestCommonAncestor;
 
 import hot_100.TreeNode;
 
+import java.util.HashMap;
+import java.util.HashSet;
+
 /**
  *
  给定一个二叉树, 找到该树中两个指定节点的最近公共祖先。
@@ -14,6 +17,38 @@ import hot_100.TreeNode;
  */
 public class Solution_236 {
 
+    // 官方解法二 用哈希表存储所有节点的父节点
+    HashMap<Integer, TreeNode> parentMap = new HashMap<>();
+    HashSet<Integer> visitedSet = new HashSet<>();
+    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+        dfs(root);
+        while (p != null) {
+            visitedSet.add(p.val);
+            p = parentMap.get(p.val);
+        }
+        while (q != null) {
+            if (visitedSet.contains(q.val)) {
+                return q;
+            }
+            q = parentMap.get(q.val);
+        }
+        return root;
+    }
+    public void dfs(TreeNode root) {
+        if (root == null) return;
+        if (root.left != null) {
+            parentMap.put(root.left.val, root);
+            dfs(root.left);
+        }
+        if (root.right != null) {
+            parentMap.put(root.right.val, root);
+            dfs(root.right);
+        }
+    }
+
+
+    /*
+    // 官方解法一 递归
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         if (root == null) return root;
         if (root == p || root == q) return root;
@@ -23,4 +58,5 @@ public class Solution_236 {
         if (leftNode != null && rightNode != null) return root;
         return leftNode != null ? leftNode : rightNode;
     }
+     */
 }
