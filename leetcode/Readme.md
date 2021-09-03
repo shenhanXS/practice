@@ -92,6 +92,8 @@
 
 ##### [33. 搜索旋转排序数组](https://leetcode-cn.com/problems/search-in-rotated-sorted-array)
 
+##### [300. 最长递增子序列](https://leetcode-cn.com/problems/longest-increasing-subsequence/)
+
 ##### [1011. 在 D 天内送达包裹的能力](https://leetcode-cn.com/problems/capacity-to-ship-packages-within-d-days)
 
 ##### [1482. 制作 m 束花所需的最少天数](https://leetcode-cn.com/problems/minimum-number-of-days-to-make-m-bouquets)
@@ -181,6 +183,8 @@
 ##### [56. 合并区间](https://leetcode-cn.com/problems/merge-intervals)
 
 ##### [208. 实现 Trie (前缀树)](https://leetcode-cn.com/problems/implement-trie-prefix-tree/)
+
+##### [238. 除自身以外数组的乘积](https://leetcode-cn.com/problems/product-of-array-except-self/)
 
 ##### [1720. 解码异或后的数组](https://leetcode-cn.com/problems/decode-xored-array)
 
