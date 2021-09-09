@@ -74,7 +74,11 @@
 
 ##### [221. 最大正方形](https://leetcode-cn.com/problems/maximal-square/)
 
+##### [494. 目标和](https://leetcode-cn.com/problems/target-sum/)
+
 ##### [剑指 Offer 49. 丑数](https://leetcode-cn.com/problems/chou-shu-lcof) (三指针)
+
+##### [剑指 Offer II 095. 最长公共子序列](https://leetcode-cn.com/problems/qJnOS7/)
 
 
 
@@ -167,6 +171,8 @@
 ##### [136. 只出现一次的数字](https://leetcode-cn.com/problems/single-number)
 
 ##### [169. 多数元素](https://leetcode-cn.com/problems/majority-element)（摩尔投票法）
+
+##### [剑指 Offer 56 - I. 数组中数字出现的次数](https://leetcode-cn.com/problems/shu-zu-zhong-shu-zi-chu-xian-de-ci-shu-lcof/)
 
 
 
