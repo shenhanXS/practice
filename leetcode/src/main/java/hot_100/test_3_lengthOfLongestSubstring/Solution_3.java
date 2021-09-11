@@ -1,6 +1,9 @@
 package hot_100.test_3_lengthOfLongestSubstring;
 
+import org.junit.jupiter.api.Test;
+
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author Shenhan
@@ -22,16 +25,16 @@ public class Solution_3 {
     }
 
     public static int lengthOfLongestSubstring(String s) {
-
         //滑动窗口
         if (s.length() == 0) return 0;
         int left = 0, max = 0;
-        HashMap<Character, Integer> hashMap = new HashMap<>();
+        Map<Character, Integer> map = new HashMap<>();
+
         for (int i = 0; i < s.length(); i++) {
-            if (hashMap.containsKey(s.charAt(i))){
-                left = Math.max(left, hashMap.get(s.charAt(i))+1);
+            if (map.containsKey(s.charAt(i))) {
+                left = Math.max(left, map.get(s.charAt(i)) + 1);
             }
-            hashMap.put(s.charAt(i), i);
+            map.put(s.charAt(i), i);
             max = Math.max(max, i - left + 1);
         }
         return max;
@@ -63,6 +66,12 @@ public class Solution_3 {
         }
         return maxLen;
          */
+    }
+
+    @Test
+    public void test() {
+
+
     }
 
 }
