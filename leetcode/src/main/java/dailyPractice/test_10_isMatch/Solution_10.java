@@ -1,23 +1,16 @@
-package tencentCloud.test20210912.test2;
-
-import org.junit.Test;
-
-import java.util.regex.Pattern;
+package dailyPractice.test_10_isMatch;
 
 /**
- * leetcode 10. 正则表达式匹配 https://leetcode-cn.com/problems/regular-expression-matching/
+ * 给你一个字符串 s 和一个字符规律 p，请你来实现一个支持 '.' 和 '*' 的正则表达式匹配。
+ *
+ * '.' 匹配任意单个字符
+ * '*' 匹配零个或多个前面的那一个元素
+ * 所谓匹配，是要涵盖 整个 字符串 s的，而不是部分字符串。
  *
  * @author Shenhan
- * @create 2021-09-12-19:41
+ * @create 2021-09-13-15:54
  */
-public class Solution {
-
-    @Test
-    public void test() {
-        String s = "mississppi";
-        String exp = "mis*is*p*.";
-        System.out.println(isMatch(s, exp));
-    }
+public class Solution_10 {
 
     public boolean isMatch(String s, String p) {
         int m = s.length();
@@ -52,6 +45,5 @@ public class Solution {
         }
         return s.charAt(i - 1) == p.charAt(j - 1);
     }
-
 
 }

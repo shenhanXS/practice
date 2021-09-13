@@ -11,10 +11,16 @@ import java.util.PriorityQueue;
 public class Solution {
 
     public static void main(String[] args) {
-        int n = 4;
+//        int n = 4;
 //        int a[][] = {{1, 2}, {2, 4}};
-        int a[][] = {{1, 2}, {2, 4}, {3, 7}, {4, 6}};
-        System.out.println(minMeetingRooms(a));
+//        int a[][] = {{1, 2}, {2, 4}, {3, 7}, {4, 6}};
+//        System.out.println(minMeetingRooms(a));
+        PriorityQueue<Integer> queue = new PriorityQueue<>(Comparator.comparingInt(o -> o));
+        queue.offer(2);
+        queue.offer(1);
+        queue.offer(3);
+        queue.poll();
+        System.out.println(queue);
     }
 
     public static int minMeetingRooms(int[][] intervals) {
